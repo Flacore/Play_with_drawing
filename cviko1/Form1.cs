@@ -60,7 +60,7 @@ namespace cviko1
                     Point tmp = new Point(e.X, e.Y);
                     points.Add(tmp);
                     this.Invalidate();
-                }
+        }
                 else
                 {
                     points.Clear();
@@ -100,58 +100,58 @@ namespace cviko1
                 case 1:
                     pn = new Pen(Color.Blue);
                     rect = new Rectangle(50, 50, 100, 100);
-                    g.DrawArc(pn, rect, 12, 84);
+             g.DrawArc(pn, rect, 12, 84);
                     break;
                 case 2:
                     pn = new Pen(Color.Blue);
                     Point pt1 = new Point(50, 50);
                     Point pt2 = new Point(200, 100);
-                    g.DrawLine(pn, pt1, pt2);
+            g.DrawLine(pn, pt1, pt2);
                     break;
                 case 3:
                     pn = new Pen(Color.Red, 100);
                     rect = new Rectangle(200, 200, 100, 50);
-                    g.DrawEllipse(pn, rect);
+            g.DrawEllipse(pn, rect);
                     break;
                 case 4:
-                    g.FillRectangle(new SolidBrush(Color.White), ClientRectangle);
-                    GraphicsPath path = new GraphicsPath(new Point[] {
-                        new Point(40,140),
-                        new Point(275,200),
-                        new Point(105,225),
-                        new Point(190,300),
-                        new Point(50,350),
-                        new Point(20,180)
-                    },
-                            new byte[] {
-                        (byte)PathPointType.Start,
-                         (byte)PathPointType.Bezier,
-                          (byte)PathPointType.Bezier,
-                           (byte)PathPointType.Bezier,
-                            (byte)PathPointType.Line,
-                             (byte)PathPointType.Line,
-                            });
-                            PathGradientBrush pgn = new PathGradientBrush(path);
-                            pgn.SurroundColors = new Color[] {
-                        Color.Green,
-                        Color.Yellow,
-                        Color.Red,
-                        Color.Beige,
-                        Color.White
-                    };
-                    g.FillPath(pgn, path);
+            g.FillRectangle(new SolidBrush(Color.White), ClientRectangle);
+            GraphicsPath path = new GraphicsPath(new Point[] {
+                new Point(40,140),
+                new Point(275,200),
+                new Point(105,225),
+                new Point(190,300),
+                new Point(50,350),
+                new Point(20,180)
+            },
+            new byte[] { 
+                (byte)PathPointType.Start,
+                 (byte)PathPointType.Bezier,
+                  (byte)PathPointType.Bezier,
+                   (byte)PathPointType.Bezier,
+                    (byte)PathPointType.Line,
+                     (byte)PathPointType.Line,
+            });
+            PathGradientBrush pgn = new PathGradientBrush(path);
+            pgn.SurroundColors = new Color[] {
+                Color.Green,
+                Color.Yellow,
+                Color.Red,
+                Color.Beige,
+                Color.White
+            };
+            g.FillPath(pgn, path);
                     break;
                 case 5:
-                    Font fnt = new Font("Times new romane", 16);
-                    g.DrawString("GDI+", fnt, new SolidBrush(Color.Red), 14, 20);
+            Font fnt = new Font("Times new romane", 16);
+            g.DrawString("GDI+", fnt, new SolidBrush(Color.Red), 14, 20);
                     break;
                 case 6:
                     rect = new Rectangle(RcDraw.X, RcDraw.Y, 100, 100);
 
-                    using (LinearGradientBrush LGB = new LinearGradientBrush(rect, Color.Red, Color.Blue, LinearGradientMode.BackwardDiagonal))
-                    {
-                        g.FillRectangle(LGB, rect);
-                    };
+            using (LinearGradientBrush LGB = new LinearGradientBrush(rect, Color.Red, Color.Blue, LinearGradientMode.BackwardDiagonal))
+            {
+                g.FillRectangle(LGB, rect);
+            };
                     break;
                 case 7:
                     if (points.Count > 1)
